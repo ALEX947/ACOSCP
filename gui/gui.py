@@ -81,9 +81,9 @@ class clsGui(QWidget):
         self.create_labeled_input(form_layout, 2, "Beta:", QDoubleSpinBox, (0.0, 10.0, 0.1, 2.0))
         self.create_labeled_input(form_layout, 3, "Rho:", QDoubleSpinBox, (0.0, 1.0, 0.01, 0.1))
         self.create_labeled_input(form_layout, 4, "Q0:", QDoubleSpinBox, (0.0, 1.0, 0.01, 0.7))
-        self.create_labeled_input(form_layout, 5, "Iteraciones:", QSpinBox, (1, 1000, 1, 20))
-        self.create_labeled_input(form_layout, 6, "Cantidad_de_hormigas:", QSpinBox, (1, 1000, 1, 10))
-        self.create_labeled_input(form_layout, 7, "Valor_inicial:", QDoubleSpinBox, (0.000, 1.000, 0.001, 0.001))
+        self.create_labeled_input(form_layout, 5, "Tao:", QDoubleSpinBox, (0.000, 1.000, 0.001, 0.001))
+        self.create_labeled_input(form_layout, 6, "Iteraciones:", QSpinBox, (1, 1000, 1, 20))
+        self.create_labeled_input(form_layout, 7, "Cantidad_de_hormigas:", QSpinBox, (1, 1000, 1, 10))
 
         self.create_file_input(form_layout, 8, "Archivo_de_entrada:", "Seleccionar Archivo")
         self.create_file_input(form_layout, 9, "Directorio_de_resultados:", "Seleccionar Directorio", True)
@@ -221,7 +221,7 @@ class clsGui(QWidget):
             str(self.q0.value()),
             str(self.iteraciones.value()),
             str(self.cantidad_de_hormigas.value()),
-            str(self.valor_inicial.value())
+            str(self.tao.value())
         ]
 
         self.acoscp_thread = ACOSCPThread(params)
